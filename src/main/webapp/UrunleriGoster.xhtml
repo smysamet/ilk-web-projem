@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"  
+xmlns:h="http://xmlns.jcp.org/jsf/html"  
+xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+	<h:head>
+		<title>Ürünleri Göster</title>
+	</h:head>
+
+
+	<h:body>
+	
+		<h1>ÜRÜNLERİ GÖSTER PAGE</h1>
+		<h:dataTable value="#{urunleriGosterController.urunList}" var="p"> 
+			<h:column>  
+        		<f:facet name="header">ID</f:facet>  
+				<h:outputText value="#{p.id}"/>  
+			</h:column>   
+			<h:column>  
+				<f:facet name="header">Title</f:facet>  
+				<h:outputText value="#{p.isim}"/>  
+			</h:column>  
+			<h:column>  
+        		<f:facet name="header">Price</f:facet>  
+        		<h:outputText value="#{p.fiyat}"/>  
+			</h:column>  
+			<h:column>  
+        		<f:facet name="header">Description</f:facet>  
+				<h:outputText value="#{p.aciklama}"/>  
+			</h:column>  
+			<h:column>  
+        		<f:facet name="header">Count</f:facet>  
+				<h:outputText value="#{p.adet}"/>  
+			</h:column>  
+			<h:column>  
+        		<f:facet name="header">Store ID</f:facet>  
+				<h:outputText value="#{p.magaza_id}"/>  
+			</h:column>  
+    	</h:dataTable>  
+		
+		<h:form>
+			<h:commandButton action="PersonelMainPage" value="Geri"></h:commandButton> <br/>
+		</h:form>
+	
+	</h:body>
+
+
+
+
+</html>

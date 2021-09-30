@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"  
+xmlns:h="http://xmlns.jcp.org/jsf/html"  
+xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+	<h:head>
+		<title>Kullanıcı Ara</title>
+	</h:head>
+
+
+	<h:body>
+	
+		<h1>KULLANICI ARA PAGE</h1>
+		
+		
+		<h:form>
+			<h:inputText value="#{kullaniciAraController.aranacakKullanici}"/> <label>#{kullaniciAraController.hataLabel}</label><br/>
+		
+			<h:selectOneRadio value = "#{kullaniciAraController.secilenRadioButton}"> 
+   			<f:selectItem itemValue = "1" itemLabel = "by ID" /> 
+   			<f:selectItem itemValue = "2" itemLabel = "by Name" />
+   			<f:selectItem itemValue = "3" itemLabel = "by Surname" />
+   			<f:selectItem itemValue = "4" itemLabel = "by Mail" />
+		</h:selectOneRadio><label>#{kullaniciAraController.hataLabel2}</label> <br/>
+		
+		<h:commandButton action="#{kullaniciAraController.kullaniciAra()}" value="Kullanıcı Ara"></h:commandButton> <br/>
+		<label>#{kullaniciAraController.hataLabel3}</label> 
+		</h:form>
+		
+		<h:dataTable value="#{kullaniciAraController.kullaniciList}" var="p"> 
+			<h:column>  
+        		<f:facet name="header">ID</f:facet>  
+				<h:outputText value="#{p.id}"/>  
+			</h:column>   
+			<h:column>  
+				<f:facet name="header">AD</f:facet>  
+				<h:outputText value="#{p.name}"/>  
+			</h:column>  
+			<h:column>  
+        		<f:facet name="header">SOYAD</f:facet>  
+        		<h:outputText value="#{p.surname}"/>  
+			</h:column>  
+			<h:column>  
+        		<f:facet name="header">MAİL</f:facet>  
+				<h:outputText value="#{p.mail}"/>  
+			</h:column>  
+			<h:column>  
+        		<f:facet name="header">ŞİFRE</f:facet>  
+				<h:outputText value="#{p.password}"/>  
+			</h:column>  
+			<h:column>  
+        		<f:facet name="header">TİP</f:facet>  
+				<h:outputText value="#{p.type}"/>  
+			</h:column>  
+    	</h:dataTable>  
+		
+		<h:form>
+			<h:commandButton action="AdminMainPage" value="Geri"></h:commandButton> <br/>
+		</h:form>
+	
+	</h:body>
+
+</html>

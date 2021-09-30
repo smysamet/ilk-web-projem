@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  
+xmlns:h="http://xmlns.jcp.org/jsf/html"  
+xmlns:f="http://xmlns.jcp.org/jsf/core">  
+
+	<h:head>
+		<title>Urun Ekle</title>
+	</h:head>
+
+	<h:body>
+		<h:form>
+			Ürün adı : <h:inputText id="urun_adi" value="#{urun.isim}"/><label>#{urunDao.errorTitle}</label><br/>
+			Ürün fiyatı : <h:inputText id="urun_fiyat" value="#{urun.fiyat}"/> <label>#{urunDao.errorPrice}</label><br/>
+			Ürün Açıklama: <h:inputText id="urun_aciklama" value="#{urun.aciklama}"/><label>#{urunDao.errorDesc}</label> <br/>
+			Ürün adedi: <h:inputText id="urun_adet" value="#{urun.adet}"/> <label>#{urunDao.errorCount}</label> <br/>
+			Mağaza id : <h:inputText id="magaza_id" value="#{urun.magaza_id}"/> <label>#{urunDao.errorStoreId}</label> <br/>
+			
+			<h:commandButton action="#{urunDao.urunuKaydet(urun)}" value="Kaydet"></h:commandButton>	<h:commandButton action="AdminMainPage" value="Geri"></h:commandButton>
+			<label>#{urunDao.kaydedildiLabel}</label>
+		</h:form>
+	</h:body>
+
+
+</html>

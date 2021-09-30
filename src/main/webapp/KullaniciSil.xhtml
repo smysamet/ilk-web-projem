@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  
+xmlns:h="http://xmlns.jcp.org/jsf/html"  
+xmlns:f="http://xmlns.jcp.org/jsf/core">  
+
+	<h:head>
+		<title>Kullanıcı Sil</title>
+		
+
+	</h:head>
+	
+	<h:body>
+	
+		<h:dataTable value="#{kullaniciSilController.kullaniciList}" var="p"> 
+			<h:column>  
+        		<f:facet name="header">ID</f:facet>  
+				<h:outputText value="#{p.id}"/>  
+			</h:column>   
+			<h:column>  
+				<f:facet name="header">Ad</f:facet>  
+				<h:outputText value="#{p.name}"/>  
+			</h:column>  
+			<h:column>  
+        		<f:facet name="header">Soyad</f:facet>  
+        		<h:outputText value="#{p.surname}"/>  
+			</h:column>  
+			<h:column>  
+        		<f:facet name="header">Mail</f:facet>  
+				<h:outputText value="#{p.mail}"/>  
+			</h:column>  
+			<h:column>  
+        		<f:facet name="header">Şifre</f:facet>  
+				<h:outputText value="#{p.password}"/>  
+			</h:column>  
+			<h:column>  
+        		<f:facet name="header">Tip</f:facet>  
+				<h:outputText value="#{p.type}"/>  
+			</h:column>  
+    	</h:dataTable>  
+		<br/>
+		<h:form>
+			Silenecek Kullanıcı ID: <h:inputText value="#{kullaniciSilController.silinecekKullaniciID}"/> <label> #{kullaniciSilController.hataLabel}</label> <br/>
+			<h:commandButton action="#{kullaniciSilController.kullaniciSil()}" value="Kullanıcıyı sil"></h:commandButton> <h:commandButton action="AdminMainPage" value="Geri"></h:commandButton> <br/>
+			<label> #{kullaniciSilController.hataLabel2}</label>
+		</h:form>
+		
+	
+	</h:body>
+	
+	
+	
+</html>

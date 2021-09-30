@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"  
+xmlns:h="http://xmlns.jcp.org/jsf/html"  
+xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+	<h:head>
+		<title>Ürün Ara</title>
+	</h:head>
+
+
+	<h:body>
+	
+		<h1>URUN ARA PAGE</h1>
+		
+		
+		<h:form>
+			<h:inputText value="#{urunAraController.aranacakUrun}"/> <label> #{urunAraController.hataLabel}</label> <br/>
+		
+			<h:selectOneRadio value = "#{urunAraController.secilenRadioButton}"> 
+   			<f:selectItem itemValue = "1" itemLabel = "by ID" /> 
+   			<f:selectItem itemValue = "2" itemLabel = "by Title" />
+   			<f:selectItem itemValue = "3" itemLabel = "by Description" />
+		</h:selectOneRadio> <label> #{urunAraController.hataLabel2}</label> <br/>
+		
+		<h:commandButton action="#{urunAraController.urunAra()}" value="Ürün Ara"></h:commandButton> <br/>
+		
+		</h:form>
+		<label> #{urunAraController.hataLabel3}</label>
+		<h:dataTable value="#{urunAraController.urunList}" var="p"> 
+			<h:column>  
+        		<f:facet name="header">ID</f:facet>  
+				<h:outputText value="#{p.id}"/>  
+			</h:column>   
+			<h:column>  
+				<f:facet name="header">Title</f:facet>  
+				<h:outputText value="#{p.isim}"/>  
+			</h:column>  
+			<h:column>  
+        		<f:facet name="header">Price</f:facet>  
+        		<h:outputText value="#{p.fiyat}"/>  
+			</h:column>  
+			<h:column>  
+        		<f:facet name="header">Description</f:facet>  
+				<h:outputText value="#{p.aciklama}"/>  
+			</h:column>  
+			<h:column>  
+        		<f:facet name="header">Count</f:facet>  
+				<h:outputText value="#{p.adet}"/>  
+			</h:column>  
+			<h:column>  
+        		<f:facet name="header">Store ID</f:facet>  
+				<h:outputText value="#{p.magaza_id}"/>  
+			</h:column>  
+    	</h:dataTable>  
+		
+		<h:form>
+			<h:commandButton action="PersonelMainPage" value="Geri"></h:commandButton> <br/>
+		</h:form>
+	
+	</h:body>
+
+
+
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  
+xmlns:h="http://xmlns.jcp.org/jsf/html"  
+xmlns:f="http://xmlns.jcp.org/jsf/core">  
+
+	<h:head>
+		<title>Kullanici Ekle</title>
+	</h:head>
+
+	<h:body>
+		<h:form>
+			Kullanıcı Adı : <h:inputText id="kullanici_adi" value="#{kullanici.name}"/> <label> #{kullaniciEkleController.hataLabel}</label> <br/>
+			Kullanıcı Soyadı : <h:inputText id="kullanici_soyad" value="#{kullanici.surname}"/> <label> #{kullaniciEkleController.hataLabel2} </label> <br/>
+			Mail : <h:inputText id="kullanici_mail" value="#{kullanici.mail}"/> <label> #{kullaniciEkleController.hataLabel3} </label>  <br/>
+			Şifre : <h:inputText id="kullanici_sifre" value="#{kullanici.password}"/> <label> #{kullaniciEkleController.hataLabel4} </label> <br/>
+			Type : <h:inputText id="kullanici_tipi" value="#{kullanici.type}"/> <label> #{kullaniciEkleController.hataLabel5} </label> <br/>
+			
+			<h:commandButton action="#{kullaniciEkleController.kullaniciyiKaydet(kullanici)}" value="Kaydet"></h:commandButton>	<h:commandButton action="AdminMainPage" value="Geri"></h:commandButton>
+			<label> #{kullaniciEkleController.hataLabel6} </label>
+		</h:form>
+	</h:body>
+
+
+</html>
